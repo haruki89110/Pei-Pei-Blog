@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 沛沛 Peipei 的花漾生活部落格 🌸</title>
+    <!-- 引入 Tailwind CSS 幫助我們快速實現 Flexbox 與現代排版 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入可愛的 Google 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 進階新手的自訂 CSS：字體與帶有小花圖案的背景 */
+        body {
+            font-family: 'M PLUS Rounded 1c', 'Nunito', sans-serif;
+            background-color: #fdf2f8; /* 淺粉底色 */
+            /* 輕柔的無縫幾何小花背景圖案 */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fbcfe8' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #50394c;
+        }
+        
+        /* 帶有毛玻璃效果的卡片 (一點點進階的感覺！) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 頂部導覽列 (Flexbox 應用) -->
+    <nav class="sticky top-0 bg-pink-100/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-center space-x-6 sm:space-x-12">
+            <a href="#about" class="text-pink-600 font-bold hover:text-pink-400 transition-colors">關於沛沛</a>
+            <a href="#articles" class="text-pink-600 font-bold hover:text-pink-400 transition-colors">最新文章</a>
+            <a href="#categories" class="text-pink-600 font-bold hover:text-pink-400 transition-colors">文章分類</a>
+        </div>
+    </nav>
+
+    <!-- Hero 區塊：大頭貼與歡迎詞 (Flexbox 置中) -->
+    <header class="flex flex-col items-center justify-center mt-16 mb-12 px-4 text-center">
+        <!-- 圓形大頭貼：aspect-square 和 rounded-full 確保是完美的正圓形 -->
+        <div class="relative w-48 h-48 sm:w-56 sm:h-56 mb-6">
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN011qnhMp1PWtCoUKDEj_!!2216442421849-0-cib.310x310.jpg" 
+                 alt="沛沛的大頭貼" 
+                 class="w-full h-full object-cover rounded-full border-8 border-white shadow-lg aspect-square">
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-pink-500 drop-shadow-sm mb-3">
+            🌸 沛沛的花漾生活札記 🌸
+        </h1>
+        <p class="text-lg text-pink-400/80 font-semibold">生活風格部落客 ｜ 甜點探店 ｜ 花藝日常</p>
+    </header>
+
+    <!-- 關於我卡片 -->
+    <section id="about" class="max-w-3xl mx-auto px-4 mb-12">
+        <div class="glass-card rounded-3xl shadow-md p-8 border border-pink-50">
+            <h2 class="text-2xl font-bold text-pink-500 border-b-2 border-pink-200 pb-2 mb-4 flex items-center">
+                <span class="text-3xl mr-2">🌷</span> 關於沛沛
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                <div class="flex-1 space-y-3 leading-relaxed">
+                    <p><b>筆名：</b> 沛沛 (Peipei)</p>
+                    <p><b>星座：</b> 牡羊座 ♈</p>
+                    <p><b>關注領域：</b> 咖啡廳探店 ☕、花藝設計 💐、居家佈置 🏡</p>
+                    <p><b>愛好：</b> 帶著相機到處紀錄生活，特別是剛出爐的草莓蛋糕！</p>
+                    <p class="mt-4 text-pink-600 bg-pink-50 p-3 rounded-xl inline-block">
+                        哈囉！我是沛沛，喜歡用文字和底片紀錄生活中的微小美好。
+                        這裡是我分享日常穿搭、好吃的甜點還有種花心得的秘密花園，歡迎常來逛逛喔！(≧◡≦)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新文章網格 (使用 CSS Grid 排版) -->
+    <section id="articles" class="max-w-4xl mx-auto px-4 mb-12">
+        <h2 class="text-2xl font-bold text-pink-500 border-b-2 border-pink-200 pb-2 mb-6 flex items-center">
+            <span class="text-3xl mr-2">📝</span> 最新文章 Recent Posts
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 文章卡片 1 -->
+            <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-pink-50 flex flex-col">
+                <img src="https://www.obonparis.com/uploads/PATISSERIE%20MICHALAK/PATISSERIE%20MICHALAK%20RE_JC-7.jpg" alt="草莓蛋糕" class="w-full h-40 object-cover">
+                <div class="p-5 flex-1 flex flex-col">
+                    <span class="text-xs text-pink-400 font-bold mb-1">甜點探店</span>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">巷弄裡的隱藏版！春季限定草莓千層蛋糕</h3>
+                    <p class="text-sm text-gray-500 mb-4 flex-1">今天來到中山區的一間老宅咖啡廳，他們家的草莓千層真的太讓人驚豔了...</p>
+                    <span class="text-xs text-gray-400">2026年11月1日</span>
+                </div>
+            </article>
+            
+            <!-- 文章卡片 2 -->
+            <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-pink-50 flex flex-col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB3tualf2niUuLpKzFHFL-zHc3IHIqSKVp0W3p7Yry4Q&s=10" alt="春季花藝" class="w-full h-40 object-cover">
+                <div class="p-5 flex-1 flex flex-col">
+                    <span class="text-xs text-yellow-500 font-bold mb-1">花藝日常</span>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">打造陽台小花園：新手也能種好的瑪格麗特</h3>
+                    <p class="text-sm text-gray-500 mb-4 flex-1">春天是最適合種花的季節！跟大家分享我最近剛佈置好的陽台小角落...</p>
+                    <span class="text-xs text-gray-400">2026年10月28日</span>
+                </div>
+            </article>
+
+            <!-- 文章卡片 3 -->
+            <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-pink-50 flex flex-col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxXRaqDes0NNGhxew-dFZGW6lmo-u6c_TGXCYdqnZ1w&s=10" alt="咖啡廳日常" class="w-full h-40 object-cover">
+                <div class="p-5 flex-1 flex flex-col">
+                    <span class="text-xs text-purple-400 font-bold mb-1">生活風格</span>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">週末早晨的儀式感，手沖咖啡與閱讀時光</h3>
+                    <p class="text-sm text-gray-500 mb-4 flex-1">給自己一個不插電的早晨，只要一杯好咖啡和一本喜歡的書...</p>
+                    <span class="text-xs text-gray-400">2026年10月25日</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 文章分類 -->
+    <section id="categories" class="max-w-3xl mx-auto px-4 mb-16 text-center">
+        <h2 class="text-2xl font-bold text-pink-500 mb-6">📂 探索更多沛沛的生活</h2>
+        <div class="flex flex-wrap justify-center gap-6 sm:gap-10">
+            <!-- 分類圖示 (正圓形與 Hover 特效) -->
+            <a href="#" class="flex flex-col items-center group">
+                <div class="w-20 h-20 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center text-3xl shadow-sm group-hover:bg-pink-200 group-hover:-translate-y-1 transition-all duration-200 aspect-square">🍰</div>
+                <span class="mt-2 text-sm font-bold text-gray-600 group-hover:text-pink-500 transition-colors">甜點探店</span>
+            </a>
+            <a href="#" class="flex flex-col items-center group">
+                <div class="w-20 h-20 bg-yellow-100 text-yellow-500 rounded-full flex items-center justify-center text-3xl shadow-sm group-hover:bg-yellow-200 group-hover:-translate-y-1 transition-all duration-200 aspect-square">🌻</div>
+                <span class="mt-2 text-sm font-bold text-gray-600 group-hover:text-yellow-500 transition-colors">花藝日常</span>
+            </a>
+            <a href="#" class="flex flex-col items-center group">
+                <div class="w-20 h-20 bg-purple-100 text-purple-500 rounded-full flex items-center justify-center text-3xl shadow-sm group-hover:bg-purple-200 group-hover:-translate-y-1 transition-all duration-200 aspect-square">☕</div>
+                <span class="mt-2 text-sm font-bold text-gray-600 group-hover:text-purple-500 transition-colors">咖啡生活</span>
+            </a>
+            <a href="#" class="flex flex-col items-center group">
+                <div class="w-20 h-20 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-3xl shadow-sm group-hover:bg-blue-200 group-hover:-translate-y-1 transition-all duration-200 aspect-square">📸</div>
+                <span class="mt-2 text-sm font-bold text-gray-600 group-hover:text-blue-500 transition-colors">攝影日記</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="text-center pb-8 text-pink-400/80 text-sm">
+        <p>© 2026 Peipei's Blog. All rights reserved.</p>
+        <p>Made with 🌸 by a passionate blogger</p>
+    </footer>
+
+</body>
+</html>
